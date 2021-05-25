@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler.PracownikCOntroller">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Książki">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="808.0">
+                           <children>
+                              <TableView fx:id="tableBook" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIDBook" prefWidth="52.0" text="ID" />
+                                    <TableColumn fx:id="colTytulBook" prefWidth="200.0" text="tytuł" />
+                                    <TableColumn fx:id="colAutorzyBook" prefWidth="193.0" text="autorzy" />
+                                    <TableColumn fx:id="colWydawnictwoBook" prefWidth="171.0" text="wydawnictwo" />
+                                    <TableColumn fx:id="colRokWydaniaBook" prefWidth="79.0" text="rok wydania" />
+                                    <TableColumn fx:id="colDzialBook" prefWidth="116.0" text="dział" />
+                                    <TableColumn fx:id="colEgzemplarzeBook" prefWidth="88.0" text="egzemplarze" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="765.0" layoutY="517.0" mnemonicParsing="false" onAction="#pokazFormularzDodaniaKsiazka" text="Dodaj" />
+                              <Button layoutX="825.0" layoutY="517.0" mnemonicParsing="false" onAction="#odswiezKsiazka" text="Odśwież" />
+                              <Button layoutX="14.0" layoutY="517.0" mnemonicParsing="false" onAction="#dodajEgzemplarze" text="dodaj egzemplarze" />
+                              <TextField fx:id="egzemplarze" layoutX="141.0" layoutY="517.0" prefHeight="25.0" prefWidth="60.0" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+                              <ChoiceBox fx:id="jakSzukacK" layoutX="20.0" layoutY="40.0" prefWidth="150.0" />
+                              <TextField fx:id="wyszukaj" layoutX="180.0" layoutY="40.0" prefHeight="25.0" prefWidth="600.0" />
+                              <Button layoutX="800.0" layoutY="40.0" mnemonicParsing="false" onAction="#szukajBook" prefHeight="25.0" prefWidth="83.0" text="szukaj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Audiobook">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="808.0">
+                           <children>
+                              <TableView fx:id="tableAudiobook" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIDAudiobook" prefWidth="51.0" text="ID" />
+                                    <TableColumn fx:id="colTytulAudiobook" prefWidth="214.0" text="tytuł" />
+                                    <TableColumn fx:id="colAutorzyAudiobook" prefWidth="227.0" text="autorzy" />
+                                    <TableColumn fx:id="colWydawnictwoAudiobook" prefWidth="206.0" text="wydawnictwo" />
+                                    <TableColumn fx:id="colRokWydaniaAudiobook" prefWidth="79.0" text="rok wydania" />
+                                    <TableColumn fx:id="colDzialAudiobook" prefWidth="122.0" text="dział" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="651.0" layoutY="519.0" mnemonicParsing="false" onAction="#pokazFormularzDodaniaAudiobooka" text="Dodaj" />
+                              <Button layoutX="774.0" layoutY="519.0" mnemonicParsing="false" onAction="#usunAudiobook" text="Usuń" />
+                              <Button layoutX="708.0" layoutY="519.0" mnemonicParsing="false" onAction="#pobierzAudiobook" text="Pobierz" />
+                              <Button layoutX="825.0" layoutY="519.0" mnemonicParsing="false" onAction="#odswiezAudiobook" text="Odśwież" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+                              <ChoiceBox fx:id="jakSzukacA" layoutX="20.0" layoutY="40.0" prefWidth="150.0" />
+                              <TextField fx:id="wyszukajA" layoutX="180.0" layoutY="40.0" prefHeight="25.0" prefWidth="600.0" />
+                              <Button layoutX="800.0" layoutY="40.0" mnemonicParsing="false" onAction="#szukajAudio" prefHeight="25.0" prefWidth="83.0" text="szukaj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Materiały PDF">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableMaterialyPDF" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIDPDF" prefWidth="55.0" text="ID" />
+                                    <TableColumn fx:id="colTytulPDF" prefWidth="250.0" text="tytuł" />
+                                    <TableColumn fx:id="colAutorzyPDF" prefWidth="218.0" text="autorzy" />
+                                    <TableColumn fx:id="colWydPDF" prefWidth="176.0" text="wydawnictwo" />
+                                    <TableColumn fx:id="colRokPDF" prefWidth="87.0" text="rok wydania" />
+                                    <TableColumn fx:id="colDzialPDF" prefWidth="113.0" text="dział" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="654.0" layoutY="521.0" mnemonicParsing="false" onAction="#pokazFormularzDodania" text="Dodaj" />
+                              <Button layoutX="775.0" layoutY="521.0" mnemonicParsing="false" onAction="#usunPDF" text="Usuń" />
+                              <Button layoutX="709.0" layoutY="521.0" mnemonicParsing="false" onAction="#pobierzPDF" text="Pobierz" />
+                              <Button layoutX="825.0" layoutY="521.0" mnemonicParsing="false" onAction="#odswiezPDF" text="Odśwież" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+                              <ChoiceBox fx:id="jakSzukacP" layoutX="20.0" layoutY="40.0" prefWidth="150.0" />
+                              <TextField fx:id="wyszukaj" layoutX="180.0" layoutY="40.0" prefHeight="25.0" prefWidth="600.0" />
+                              <Button layoutX="800.0" layoutY="40.0" mnemonicParsing="false" onAction="#szukajPDF" prefHeight="25.0" prefWidth="83.0" text="szukaj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Zamówienia">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableZAMOWIENIA" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIDZ" prefWidth="109.0" text="ID zamówienia" />
+                                    <TableColumn fx:id="colIDStudZ" prefWidth="196.0" text="ID studenta" />
+                                    <TableColumn fx:id="colDATAOZ" prefWidth="219.0" text="data odbioru" />
+                                    <TableColumn fx:id="colDATAZWRZ" prefWidth="168.0" text="data zwrotu" />
+                                    <TableColumn fx:id="colNALZ" prefWidth="92.0" text="należności" />
+                                    <TableColumn fx:id="colSTATUSZ" prefWidth="134.0" text="status" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="656.0" layoutY="65.0" mnemonicParsing="false" onAction="#potwierdzOplate" text="Potwierdź opłate" />
+                              <Button layoutX="825.0" layoutY="65.0" mnemonicParsing="false" onAction="#zrealizujZamowienie" text="Zrealizuj" />
+                              <Button layoutX="478.0" layoutY="65.0" mnemonicParsing="false" onAction="#gotowyDoOdbioru" text="Gotowe do odbioru" />
+                              <Button layoutX="296.0" layoutY="65.0" mnemonicParsing="false" onAction="#zmienStatus" text="Zmień na odebrane" />
+                              <Button layoutX="161.0" layoutY="65.0" mnemonicParsing="false" onAction="#aktualizujGrzywne" text="Aktualizuj" />
+                              <Button layoutX="14.0" layoutY="65.0" mnemonicParsing="false" onAction="#pokazKsiazkiZamowienia" text="Pokaż książki" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Rezerwacje">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="900.0">
+                           <children>
+                              <TableView fx:id="tabelaRezerwacje" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIDRezerwacja" prefWidth="63.0" text="ID" />
+                                    <TableColumn fx:id="colIDStudentaRezerwacje" prefWidth="106.0" text="ID studenta" />
+                                    <TableColumn fx:id="colIDKsiazkiRezerwacja" prefWidth="84.0" text="ID książki" />
+                                    <TableColumn fx:id="colTytulKsiazkiRezerwacja" prefWidth="341.0" text="tytuł" />
+                                    <TableColumn fx:id="colDataRezerwacji" prefWidth="158.0" text="data rezerwacji" />
+                                    <TableColumn fx:id="colDostepnoscRezerwacje" prefWidth="170.0" text="czy dostępna" />
+                                 </columns>
+                              </TableView>
+                              <Button layoutX="684.0" layoutY="65.0" mnemonicParsing="false" onAction="#aktualizujDostepnosc" text="Sprawdź dostępność" />
+                              <Button layoutX="825.0" layoutY="65.0" mnemonicParsing="false" onAction="#zrealizujRezerwacje" text="Zrealizuj" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Statystyki">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="808.0">
+                           <children>
+                               <GridPane alignment="CENTER" layoutX="39.0" layoutY="62.0" prefHeight="354.0" prefWidth="868.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="311.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="557.0" minWidth="10.0" prefWidth="557.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="447.0" text="Liczba wypożyczonych książek:" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="343.0" text="Liczba zwróconych książek:" textAlignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblLiczbaWYPKM" prefHeight="25.0" prefWidth="301.0" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="334.0" text="Liczba przetrzymanych ksiazek:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="301.0" text="ID najczęściej rezerwowanej książki:" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="318.0" text="ID trzeciej najczęściej rezerwowanej książki:" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblLiczbaZKM" prefHeight="25.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblWKR" prefHeight="25.0" prefWidth="548.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblIDNWK" prefHeight="25.0" prefWidth="552.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblIDNRK" prefHeight="25.0" prefWidth="557.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblIDTNRK" prefHeight="26.0" prefWidth="556.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="334.0" text="ID drugiej najczęściej rezerwowanej książki:" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblDNRK" prefHeight="25.0" prefWidth="554.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="301.0" text="ID najczęściej wypożyczanej książki:" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <Button layoutX="799.0" layoutY="20.0" mnemonicParsing="false" onAction="#pokazStatystyki" text="Odśwież" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

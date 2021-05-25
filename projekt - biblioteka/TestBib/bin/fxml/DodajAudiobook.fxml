@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler.PracownikCOntroller">
+   <children>
+      <Label layoutX="94.0" layoutY="33.0" text="Podaj dane audiobooka:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStatusDodaniaAudiobooka" layoutX="57.0" layoutY="536.0" prefHeight="27.0" prefWidth="320.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="57.0" layoutY="69.0" prefHeight="452.0" prefWidth="320.0" style="-fx-background-color: orange;">
+         <children>
+            <TextField fx:id="txtTytulAudiobooka" layoutX="40.0" layoutY="32.0" prefHeight="37.0" prefWidth="241.0" promptText="Tytuł">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtAutorzyAudiobook" layoutX="40.0" layoutY="85.0" prefHeight="37.0" prefWidth="241.0" promptText="Autorzy">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtWydawnictwoAudiobook" layoutX="40.0" layoutY="138.0" prefHeight="37.0" prefWidth="241.0" promptText="Wydawnictwo">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtRokWydaniaAudiobook" layoutX="41.0" layoutY="191.0" prefHeight="37.0" prefWidth="241.0" promptText="Rok wydania">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtDzialAudiobook" layoutX="40.0" layoutY="245.0" prefHeight="37.0" prefWidth="241.0" promptText="Dział">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtSciezkaAudiobook" layoutX="40.0" layoutY="298.0" prefHeight="37.0" prefWidth="241.0" promptText="Ścieżka pliku">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button layoutX="128.0" layoutY="371.0" mnemonicParsing="false" onAction="#dodajAudiobook" text="Dodaj">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

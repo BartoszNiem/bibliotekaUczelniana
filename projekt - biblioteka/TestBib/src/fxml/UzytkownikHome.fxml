@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kontroler.UzytkownikHomeController">
+	<children>
+		<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+			<children>
+				<TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+					<tabs>
+						<Tab text="Książki">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<TableView fx:id="tabelaWynik" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+											<columns>
+												<TableColumn fx:id="idCol" prefWidth="31.0" text="ID" />
+												<TableColumn fx:id="tytulCol" prefWidth="207.0" text="tytuł" />
+												<TableColumn fx:id="autorCol" prefWidth="224.0" text="autorzy" />
+												<TableColumn fx:id="wydCol" minWidth="0.0" prefWidth="154.0" text="wydawnictwo" />
+												<TableColumn fx:id="rokCol" minWidth="0.0" prefWidth="74.0" text="rok wydania" />
+												<TableColumn fx:id="dzialCol" minWidth="0.0" prefWidth="106.0" text="dział" />
+												<TableColumn fx:id="egzCol" prefWidth="103.0" text="egzemplarze" />
+											</columns>
+										</TableView>
+										<Button layoutX="389.0" layoutY="518.0" mnemonicParsing="false" onAction="#dodaj" prefWidth="123.0" text="dodaj do koszyka" />
+										<Label fx:id="koszykStatus" layoutX="400.0" layoutY="431.0" textFill="RED">
+											<font>
+												<Font size="14.0" />
+											</font>
+										</Label>
+										<ChoiceBox fx:id="jakSzukacK" layoutX="20.0" layoutY="40.0" prefWidth="150.0" />
+										<TextField fx:id="wyszukaj" layoutX="180.0" layoutY="40.0" prefHeight="25.0" prefWidth="600.0" />
+										<Button layoutX="800.0" layoutY="40.0" mnemonicParsing="false" onAction="#szukajBook" prefHeight="25.0" prefWidth="83.0" text="szukaj" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Audiobook">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="808.0">
+									<children>
+										<TableView fx:id="tableAudiobook" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+											<columns>
+												<TableColumn fx:id="colIDAudiobook" prefWidth="75.0" text="ID" />
+												<TableColumn fx:id="colTytulAudiobook" prefWidth="211.0" text="tytuł" />
+												<TableColumn fx:id="colAutorzyAudiobook" prefWidth="199.0" text="autorzy" />
+												<TableColumn fx:id="colWydawnictwoAudiobook" prefWidth="161.0" text="wydawnictwo" />
+												<TableColumn fx:id="colRokWydaniaAudiobook" prefWidth="117.0" text="rok wydania" />
+												<TableColumn fx:id="colDzialAudiobook" prefWidth="155.0" text="dział" />
+											</columns>
+										</TableView>
+										<Button layoutX="422.0" layoutY="518.0" mnemonicParsing="false" onAction="#pobierzAudiobook" text="Pobierz" />
+                              <ChoiceBox fx:id="jakSzukacA" layoutX="20.0" layoutY="40.0" prefWidth="150.0" />
+                              <TextField fx:id="wyszukajA" layoutX="180.0" layoutY="40.0" prefHeight="25.0" prefWidth="600.0" />
+                              <Button layoutX="800.0" layoutY="40.0" mnemonicParsing="false" onAction="#szukajAudio" prefHeight="25.0" prefWidth="83.0" text="szukaj" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Materiały PDF">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<TableView fx:id="tableMaterialyPDF" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+											<columns>
+												<TableColumn fx:id="colIDPDF" prefWidth="55.0" text="ID" />
+												<TableColumn fx:id="colTytulPDF" prefWidth="250.0" text="tytul" />
+												<TableColumn fx:id="colAutorzyPDF" prefWidth="218.0" text="autorzy" />
+												<TableColumn fx:id="colWydPDF" prefWidth="176.0" text="wydawnictwo" />
+												<TableColumn fx:id="colRokPDF" prefWidth="82.0" text="rok wydania" />
+												<TableColumn fx:id="colDzialPDF" prefWidth="137.0" text="dzial" />
+											</columns>
+										</TableView>
+										<Button layoutX="422.0" layoutY="521.0" mnemonicParsing="false" onAction="#pobierzPDF" text="Pobierz" />
+                              <TextField fx:id="wyszukaj" layoutX="180.0" layoutY="40.0" prefHeight="25.0" prefWidth="600.0" />
+                              <ChoiceBox fx:id="jakSzukacP" layoutX="20.0" layoutY="40.0" prefWidth="150.0" />
+                              <Button layoutX="800.0" layoutY="40.0" mnemonicParsing="false" onAction="#szukajPDF" prefHeight="25.0" prefWidth="83.0" text="szukaj" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Moje wypożyczenia">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="900.0">
+									<children>
+										<TableView fx:id="tabelaMoje" layoutY="100.0" prefHeight="300.0" prefWidth="500.0">
+											<columns>
+												<TableColumn fx:id="mojeColId" prefWidth="43.0" text="ID" />
+												<TableColumn fx:id="mojeColTytul" prefWidth="209.0" text="tytuł" />
+												<TableColumn fx:id="mojeColData" prefWidth="87.0" text="data zwrotu" />
+												<TableColumn fx:id="mojeColNaleznosci" minWidth="0.0" prefWidth="65.0" text="należności" />
+												<TableColumn fx:id="mojeColStatus" prefWidth="95.0" text="status" />
+											</columns>
+										</TableView>
+										<TableView fx:id="tabelaRezerwacje" layoutX="550.0" layoutY="100.0" prefHeight="300.0" prefWidth="350.0">
+											<columns>
+												<TableColumn fx:id="RezerwacjeColId" prefWidth="32.0" text="ID" />
+												<TableColumn fx:id="rezerwacjeColTytul" prefWidth="217.0" text="tytuł" />
+												<TableColumn fx:id="rezerwacjeColData" prefWidth="100.0" text="data rezerwacji" />
+											</columns>
+										</TableView>
+										<Button layoutX="680.0" layoutY="400.0" mnemonicParsing="false" onAction="#rezygnuj" prefWidth="90.0" text="rezygnuj" />
+										<Button layoutX="212.0" layoutY="400.0" mnemonicParsing="false" onAction="#przedluz" prefWidth="76.0" text="przedłuż" />
+                              <Label layoutX="213.0" layoutY="65.0" text="moje książki">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="675.0" layoutY="65.0" text="moje rezerwacje">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Koszyk">
+							<content>
+								<AnchorPane fx:id="koszykPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<TableView fx:id="tabelaKoszyk" layoutY="100.0" prefHeight="400.0" prefWidth="900.0">
+											<columns>
+												<TableColumn fx:id="idCol1" prefWidth="31.0" text="ID" />
+												<TableColumn fx:id="tytulCol1" prefWidth="238.0" text="tytuł" />
+												<TableColumn fx:id="autorCol1" prefWidth="212.0" text="autorzy" />
+												<TableColumn fx:id="wydCol1" minWidth="0.0" prefWidth="142.0" text="wydawnictwo" />
+												<TableColumn fx:id="rokCol1" minWidth="0.0" prefWidth="76.0" text="rok wydania" />
+												<TableColumn fx:id="dzialCol1" minWidth="0.0" prefWidth="106.0" text="dział" />
+												<TableColumn fx:id="egzCol1" prefWidth="94.0" text="egzemplarze" />
+											</columns>
+										</TableView>
+										<Button layoutX="362.0" layoutY="70.0" mnemonicParsing="false" onAction="#usun" prefWidth="63.0" text="usuń" />
+										<Button layoutX="475.0" layoutY="70.0" mnemonicParsing="false" onAction="#zamow" prefWidth="71.0" text="zamów" />
+                              <Button layoutX="840.0" layoutY="1.0" mnemonicParsing="false" onAction="#wyloguj" text="wyloguj" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+					</tabs>
+				</TabPane>
+			</children>
+		</Pane>
+	</children>
+</StackPane>
